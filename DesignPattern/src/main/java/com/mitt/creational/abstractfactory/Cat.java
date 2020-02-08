@@ -1,4 +1,4 @@
-package com.mitt.abstractfactory;
+package com.mitt.creational.abstractfactory;
 
 public class Cat implements Animal{
 

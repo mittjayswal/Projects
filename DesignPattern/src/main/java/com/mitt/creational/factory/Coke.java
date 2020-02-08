@@ -1,4 +1,4 @@
-package com.mitt.factory;
+package com.mitt.creational.factory;
 
 public abstract class Coke {
 	

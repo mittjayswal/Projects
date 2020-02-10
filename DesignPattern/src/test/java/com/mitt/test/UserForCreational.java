@@ -7,6 +7,8 @@ import com.mitt.creational.abstractfactory.AbstractFactory;
 import com.mitt.creational.abstractfactory.Animal;
 import com.mitt.creational.abstractfactory.AnimalFactory;
 import com.mitt.creational.abstractfactory.FactoryProvider;
+import com.mitt.creational.builder.Game;
+import com.mitt.creational.builder.Game.GameBuilder;
 import com.mitt.creational.prototype.Employee;
 import com.mitt.creational.singleton.Singleton;
 
@@ -53,5 +55,21 @@ public class UserForCreational {
 		emp2.printRecord();
 		
 		Assert.assertEquals(emp1.getName(), emp2.getName());
+	}
+	
+	@Test
+	public void testBuilderPattern() {
+		Game game = new GameBuilder()
+				.homeTeam("Texas")
+				.awayTeam("SF")
+				.currentYardLine(20)
+				.stadium("Super")
+				.weather("nice")
+				.build();
+		
+		Assert.assertEquals(game.getHomeTeam(), "Texas");
+		Assert.assertEquals(game.getAwayTeam(), "SF");
+		Assert.assertEquals(game.getCurrentYardLine(), 20);
+		Assert.assertEquals(game.getWeather(), "nice");
 	}
 }
